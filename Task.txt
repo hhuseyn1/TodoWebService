@@ -1,0 +1,1 @@
+add serilog with configuration file
