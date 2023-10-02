@@ -27,7 +27,7 @@ Log.Logger = new LoggerConfiguration()
     .Enrich.WithThreadId()
     .Enrich.WithProperty("Environment", builder.Environment.EnvironmentName)
     .WriteTo.Console(outputTemplate: outputTemplate)
-    .WriteTo.File(@"C:\Users\namiqrasullu\source\repos\TodoWebService\TodoWebService\logs\mylog.txt", rollingInterval: RollingInterval.Day, outputTemplate : outputTemplate)
+    .WriteTo.File("logfile.txt", rollingInterval: RollingInterval.Day, outputTemplate : outputTemplate)
     .WriteTo.MSSqlServer(builder.Configuration.GetConnectionString("TodoDbConnectionString"), "logs", autoCreateSqlTable: true)
     .CreateLogger();
 
